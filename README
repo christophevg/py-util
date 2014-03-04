@@ -1,0 +1,14 @@
+py-util
+A collection of utilities I tend to use in multiple Python projects.
+author: Christophe VG <contact@christophe.vg>
+
+---
+
+check.py    - isstring and isidentifier
+dot.py      - DotBuilder class to easily create GRaphviz dot sources
+environment - Environment, a key/value environment building class
+support     - a usage warning decorator and print_stderr
+types       - TypedList, NamedTypedOrderedDict and Any
+visitor     - an extensive Visitor implementation framework
+
+Enjoy if you find them useful, but remember: YMMV ;-)
