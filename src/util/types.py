@@ -67,6 +67,9 @@ class TypedList(object):
   def __str__(self):
     return "TypedList(" + self.type.__name__ + ")"
 
+  def __repr__(self):
+    return "[" + ",".join([str(obj) for obj in self.objects]) + "]"
+
 class Any(object):
   def __init__(self, *args):
     self.types = args
