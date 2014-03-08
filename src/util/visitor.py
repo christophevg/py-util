@@ -98,13 +98,17 @@ def with_handling(method):
         raise
       else:
         # no handler, that's ok
-        pass
+       return False
+    return True
 
   obj_name = method.__name__[len("visit_"):]  # extract object name from method 
 
   def wrapped(self, obj):
-    execute(self, "before_visit_" + obj_name, obj)
+    handled = False
+    if execute(self, "before_visit_" + obj_name, obj): handled = True
     method(self, obj)
-    execute(self, "after_visit_" + obj_name, obj)
+    if execute(self, "after_visit_" + obj_name, obj): handled = True
+    if not handled and hasattr(self, 'warn_unhandled') and self.warn_unhandled:
+      assert False, "WARNING: no handling for " + obj_name
 
   return wrapped
