@@ -49,6 +49,9 @@ class TypedList(object):
     try: return self.objects[index]
     except: return None
 
+  def __setitem__(self, index, value):
+    self.objects[index] = value
+
   def __len__(self):
     return len(self.objects)
 
