@@ -76,8 +76,9 @@ def stacked(method):
   """
   def wrapped(self, obj):
     self._stack.append(obj)
-    method(self, obj)
+    value = method(self, obj)
     self._stack.pop()
+    return value
   return wrapped
 
 def with_handling(method):
