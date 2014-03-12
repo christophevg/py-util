@@ -4,6 +4,10 @@
 
 from collections import OrderedDict
 
+class Bunch(object):
+  def __init__(self, adict):
+    self.__dict__.update(adict)
+
 class NamedTypedOrderedDict(object):
   def __init__(self, type):
     self.objects = OrderedDict()
