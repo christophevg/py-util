@@ -62,12 +62,12 @@ class TypedList(object):
   def append(self, obj):
     if isinstance(self.type, Any):
       assert self.type.isa(obj), \
-             "TypedList's provided obj is a " + + obj.__class__.__name__ + \
+             "TypedList's provided obj is a " + obj.__class__.__name__ + \
              " but expected " + str(self.type.__name__)
     else:
       assert isinstance(obj, self.type), \
-             "TypedList's provided obj is a " + + obj.__class__.__name__ + \
-             " but expected " + self.type.__name__
+             "TypedList's provided obj is a " + obj.__class__.__name__ + \
+             " but expected " + str(self.type.__name__)
     self.objects.append(obj)
     return self
 
