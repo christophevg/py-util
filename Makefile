@@ -1,7 +1,7 @@
 APP=py-util
 
-PYTHON=PYTHONPATH=src/:. /opt/local/bin/python2.7
-COVERAGE=/opt/local/bin/coverage-2.7
+PYTHON=PYTHONPATH=src/:. python
+COVERAGE=/usr/local/bin/coverage
 
 all: test
 
